@@ -144,3 +144,8 @@ def predict():
         except Exception as e:
             print(f'Error during prediction: {e}')
             return render_template('results.html.jinja', result=f'Error during prediction: {e}')
+        
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
